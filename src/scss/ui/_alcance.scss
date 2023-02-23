@@ -1,0 +1,33 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.alcance {
+    background-color: v.$primario;
+
+    &__grid {
+        @include m.tablet { 
+            @include m.grid(5, 3rem);
+            align-items: center;
+         }
+    }
+
+    &__contenido {
+        grid-column: 1 / 4 ;
+    }
+
+    &__heading {
+        @include m.hBorder(v.$secundario, v.$blanco);
+    }
+
+    &__imagen {
+        grid-column:  4 / 6 ;
+        transition-property: rotate scale;
+        transition-duration: 300ms;
+
+        &:hover {
+            transform: rotate(-4deg) scale(1.1);
+        }
+    }
+
+
+}
